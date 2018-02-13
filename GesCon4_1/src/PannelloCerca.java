@@ -26,5 +26,6 @@ public class PannelloCerca extends JPanel
 	public JFrame getFinestraSuperiore()
 	{
 		return this.finestraSuperiore;
+		//prova
 	}
 }
