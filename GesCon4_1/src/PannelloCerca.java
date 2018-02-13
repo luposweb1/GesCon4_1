@@ -7,7 +7,8 @@ public class PannelloCerca extends JPanel
 	private JFrame finestraSuperiore;
 	public PannelloCerca(MotoreCongelatore motoreCongelatore, JFrame finestraSuperiore)
 	{
-		
+		this.setFinestraSuperiore(finestraSuperiore);
+		this.setMotoreCongelatore(motoreCongelatore);
 	}
 	
 	//metodi getter e setter delle parametri passati al Pannello
