@@ -15,6 +15,6 @@ public class GesCon4_1
 		FinestraPrincipale finestraPrincipale = new FinestraPrincipale(motoreCongelatore);
 		finestraPrincipale.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		finestraPrincipale.setVisible(true);
-		//prova due
+
 	}
 }
