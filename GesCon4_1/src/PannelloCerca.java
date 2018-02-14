@@ -5,6 +5,12 @@ public class PannelloCerca extends JPanel
 {
 	private MotoreCongelatore motoreCongelatore;
 	private JFrame finestraSuperiore;
+	
+	private PannelloSopra pannelloSopra;
+	private PannelloCentro pannelloCentro;
+	private PannelloSotto pannelloSotto;
+	private PannelloSinistra pannelloSinistra;
+	
 	public PannelloCerca(MotoreCongelatore motoreCongelatore, JFrame finestraSuperiore)
 	{
 		this.setFinestraSuperiore(finestraSuperiore);
@@ -27,6 +33,38 @@ public class PannelloCerca extends JPanel
 	public JFrame getFinestraSuperiore()
 	{
 		return this.finestraSuperiore;
-		//prova
+	}
+	
+	//Pannelli
+	public class PannelloSopra extends JPanel
+	{
+		public PannelloSopra()
+		{
+			
+		}
+	}
+	
+	public class PannelloCentro extends JPanel
+	{
+		public PannelloCentro()
+		{
+			
+		}
+	}
+	
+	public class PannelloSotto extends JPanel
+	{
+		public PannelloSotto()
+		{
+			
+		}
+	}
+	
+	public class PannelloSinistra extends JPanel
+	{
+		public PannelloSinistra()
+		{
+			
+		}
 	}
 }
