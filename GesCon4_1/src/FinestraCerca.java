@@ -6,8 +6,8 @@ import java.awt.event.*;
 public class FinestraCerca extends JFrame
 {
 	private MotoreCongelatore motoreCongelatore;
-	public final int LARGHEZZA_FINESTRA = 920;
-	public final int ALTEZZA_FINESTRA = 600;
+	public final int LARGHEZZA_FINESTRA = 600;
+	public final int ALTEZZA_FINESTRA = 400;
 	
 	public FinestraCerca(MotoreCongelatore motoreCongelatore)
 	{
@@ -25,6 +25,10 @@ public class FinestraCerca extends JFrame
 				int  i = JOptionPane.showConfirmDialog(null,"Confermando non verrà\n"	+ "visualizzata la ricerca!\nConfermi di voler uscire?","ATTENZIONE",JOptionPane.YES_NO_OPTION);
 				if(i==0)
 				{
+					getMotoreCongelatore().setAvvioVisual(true);
+					getMotoreCongelatore().setAvvioRicerca(false);
+					getMotoreCongelatore().getPannelloDestraPannelloPrincipale().repaint();
+					//getMotoreCongelatore().getPannelloCentroPannelloPrincipale().repaint();
 					dispose();
 				}
 				if(i==1)
@@ -35,6 +39,7 @@ public class FinestraCerca extends JFrame
 		});
 		Container contenitore = this.getContentPane();
 		PannelloCerca pannelloCerca = new PannelloCerca(getMotoreCongelatore(),this);
+		contenitore.add(pannelloCerca);
 	}
 	
 	public void setMotoreCongelatore(MotoreCongelatore motoreCongelatore)

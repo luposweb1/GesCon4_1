@@ -288,11 +288,6 @@ public class PannelloPrincipale extends JPanel
 					getMotoreCongelatore().setMessaggioInformativo("Nessun Prodotto Selezionato");
 					etichettaMessaggioInformativo.setText(getMotoreCongelatore().getMessaggioInformativo());
 				}
-				/*else if(!checkSceltaProdotto.isSelected())
-				{
-					getMotoreCongelatore().setMessaggioInformativo("Nessuna Voce Selezionata");
-					etichettaMessaggioInformativo.setText(getMotoreCongelatore().getMessaggioInformativo());
-				}*/
 				checkSceltaProdotto.setSelected(false);
 			}
 		}
@@ -511,7 +506,12 @@ public class PannelloPrincipale extends JPanel
 			}
 			public void actionPerformed(ActionEvent e)
 			{
-				
+				//azione per il pulsante esci
+				int  i = JOptionPane.showConfirmDialog(getFinestraSuperiore(),"Vuoi Davvero Uscire?","ATTENZIONE",JOptionPane.YES_NO_OPTION);
+				if(i==0)
+				{
+					getFinestraSuperiore().dispose();
+				}
 			}
 		}
 	}

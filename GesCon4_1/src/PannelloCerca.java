@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.*;
 public class PannelloCerca extends JPanel
 {
 	private MotoreCongelatore motoreCongelatore;
@@ -15,6 +16,36 @@ public class PannelloCerca extends JPanel
 	{
 		this.setFinestraSuperiore(finestraSuperiore);
 		this.setMotoreCongelatore(motoreCongelatore);
+		this.setLayout(new BorderLayout());
+		Border bordoPanel = BorderFactory.createRaisedSoftBevelBorder();
+		
+		pannelloSopra = new PannelloSopra();
+		pannelloSopra.setBackground(this.getMotoreCongelatore().getColorePannelloSopra());
+		pannelloSopra.setBorder(bordoPanel);
+		Dimension prefSizeSopra = pannelloSopra.getPreferredSize();
+		prefSizeSopra.height = 40;
+		pannelloSopra.setPreferredSize(prefSizeSopra);
+		this.add(pannelloSopra,BorderLayout.NORTH);
+		
+		pannelloCentro = new PannelloCentro();
+		pannelloCentro.setBackground(this.getMotoreCongelatore().getColorePannelloCentro());
+		pannelloCentro.setBorder(bordoPanel);
+		this.add(pannelloCentro,BorderLayout.CENTER);
+		
+		pannelloSotto = new PannelloSotto();
+		pannelloSotto.setBackground(this.getMotoreCongelatore().getColorePannelloSotto());
+		pannelloSotto.setBorder(bordoPanel);
+		Dimension prefSizeSotto = pannelloSotto.getPreferredSize();
+        prefSizeSotto.height = 30;
+       	pannelloSotto.setPreferredSize(prefSizeSotto);
+		this.add(pannelloSotto,BorderLayout.SOUTH);
+		
+		pannelloSinistra = new PannelloSinistra();
+		pannelloSinistra.setBackground(this.getMotoreCongelatore().getColorePannelloSinistra());
+		Border titoloBordoPannelloSinistra = BorderFactory.createTitledBorder(bordoPanel,"Cerca Per:");
+		pannelloSinistra.setBorder(titoloBordoPannelloSinistra);
+		this.add(pannelloSinistra, BorderLayout.WEST);
+		
 	}
 	
 	//metodi getter e setter delle parametri passati al Pannello
