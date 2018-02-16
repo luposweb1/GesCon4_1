@@ -487,7 +487,16 @@ public class PannelloPrincipale extends JPanel
 			}
 			public void actionPerformed(ActionEvent e)
 			{
-				
+				try
+				{
+					getMotoreCongelatore().salvaDatabase();
+					etichettaMessaggioInformativo.setText(getMotoreCongelatore().getMessaggioInformativo());
+					JOptionPane.showMessageDialog(getFinestraSuperiore(),"Salvataggio Database effettuato");
+				}
+				catch(Exception eccezione)
+				{
+					etichettaMessaggioInformativo.setText(getMotoreCongelatore().getMessaggioInformativo());
+				}
 			}
 		}
 		
