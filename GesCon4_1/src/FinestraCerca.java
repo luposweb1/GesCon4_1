@@ -30,7 +30,6 @@ public class FinestraCerca extends JFrame
 					getMotoreCongelatore().getPannelloDestraPannelloPrincipale().repaint();
 					//getMotoreCongelatore().getPannelloCentroPannelloPrincipale().repaint();
 					dispose();
-					//ciao ciup
 				}
 				if(i==1)
 				{
