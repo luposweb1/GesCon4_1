@@ -467,7 +467,8 @@ public class PannelloPrincipale extends JPanel
 			}
 			public void actionPerformed(ActionEvent e)
 			{
-				
+				FinestraStampa finestraStampa = new FinestraStampa(getMotoreCongelatore());
+				finestraStampa.setVisible(true);
 			}
 		}
 		
