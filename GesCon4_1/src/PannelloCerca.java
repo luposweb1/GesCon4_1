@@ -12,6 +12,11 @@ public class PannelloCerca extends JPanel
 	private PannelloSotto pannelloSotto;
 	private PannelloSinistra pannelloSinistra;
 	
+	private JLabel etichettaMessaggioInformativo;
+	
+	private JLabel etichettaDenominazioneRicerca;
+	private JTextField casellaRicercaPerNome;
+	
 	public PannelloCerca(MotoreCongelatore motoreCongelatore, JFrame finestraSuperiore)
 	{
 		this.setFinestraSuperiore(finestraSuperiore);
@@ -32,6 +37,7 @@ public class PannelloCerca extends JPanel
 		pannelloCentro.setBorder(bordoPanel);
 		this.add(pannelloCentro,BorderLayout.CENTER);
 		
+		getMotoreCongelatore().setMessaggioInformativo("Ricerca nel congelatore");
 		pannelloSotto = new PannelloSotto();
 		pannelloSotto.setBackground(this.getMotoreCongelatore().getColorePannelloSotto());
 		pannelloSotto.setBorder(bordoPanel);
@@ -45,6 +51,7 @@ public class PannelloCerca extends JPanel
 		Border titoloBordoPannelloSinistra = BorderFactory.createTitledBorder(bordoPanel,"Cerca Per:");
 		pannelloSinistra.setBorder(titoloBordoPannelloSinistra);
 		this.add(pannelloSinistra, BorderLayout.WEST);
+		
 		
 	}
 	
@@ -87,7 +94,8 @@ public class PannelloCerca extends JPanel
 	{
 		public PannelloSotto()
 		{
-			
+			etichettaMessaggioInformativo = new JLabel(getMotoreCongelatore().getMessaggioInformativo());
+			this.add(etichettaMessaggioInformativo);
 		}
 	}
 	
