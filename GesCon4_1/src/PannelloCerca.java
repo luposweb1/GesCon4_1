@@ -17,6 +17,12 @@ public class PannelloCerca extends JPanel
 	private JLabel etichettaDenominazioneRicerca;
 	private JTextField casellaRicercaPerNome;
 	
+	private ButtonGroup gruppoSceltaRicerca;
+	private JRadioButton sceltaRicercaNome;
+	private JRadioButton sceltaRicercaDataScadenza;
+	private JRadioButton sceltaRicercaDataInserimento;
+	private JRadioButton sceltaRicercaPerConfezioneAperta;
+	
 	public PannelloCerca(MotoreCongelatore motoreCongelatore, JFrame finestraSuperiore)
 	{
 		this.setFinestraSuperiore(finestraSuperiore);
@@ -103,7 +109,25 @@ public class PannelloCerca extends JPanel
 	{
 		public PannelloSinistra()
 		{
-			
+			this.setLayout(new GridLayout(12,1));
+			gruppoSceltaRicerca = new ButtonGroup();
+			sceltaRicercaNome = new JRadioButton("per Nome",true);
+			//sceltaRicercaNome.setForeground(getMotoreCongelatore().getColorePannelloSinistra());
+			sceltaRicercaNome.setBackground(getMotoreCongelatore().getColorePannelloSinistra());
+			sceltaRicercaDataInserimento = new JRadioButton("per Data Ins",false);
+			sceltaRicercaDataInserimento.setBackground(getMotoreCongelatore().getColorePannelloSinistra());
+			sceltaRicercaDataScadenza = new JRadioButton("per Data Sca",false);
+			sceltaRicercaDataScadenza.setBackground(getMotoreCongelatore().getColorePannelloSinistra());
+			sceltaRicercaPerConfezioneAperta = new JRadioButton("partiz.", false);
+			sceltaRicercaPerConfezioneAperta.setBackground(getMotoreCongelatore().getColorePannelloSinistra());
+			gruppoSceltaRicerca.add(sceltaRicercaNome);
+			gruppoSceltaRicerca.add(sceltaRicercaDataInserimento);
+			gruppoSceltaRicerca.add(sceltaRicercaDataScadenza);
+			gruppoSceltaRicerca.add(sceltaRicercaPerConfezioneAperta);
+			this.add(sceltaRicercaNome);
+			this.add(sceltaRicercaDataInserimento);
+			this.add(sceltaRicercaDataScadenza);
+			this.add(sceltaRicercaPerConfezioneAperta);
 		}
 	}
 }
