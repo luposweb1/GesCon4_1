@@ -30,6 +30,15 @@ public class PannelloCerca extends JPanel
 	private boolean booleanSceltaRicercaDataInserimento;
 	private boolean booleanSceltaRicercaPerConfezioneAperta;
 	
+	//i component che saranno più o meno visibili in base alla scelta effettuata
+	private JLabel etichettaDescrizioneRicercaPerNome;
+	private JTextField campoDiTestoRicercaPerNome;
+	
+	private JLabel etichettaDescrizioneRicercaPerDataScadenza;
+	private JComboBox<Integer> casellaCombinataGiornoScadenza;
+	private JComboBox<Integer> casellaCombinataMeseScadenza;
+	private JComboBox<Integer> casellaCombinataAnnoScadenza;
+	
 	public PannelloCerca(MotoreCongelatore motoreCongelatore, JFrame finestraSuperiore)
 	{
 		this.setFinestraSuperiore(finestraSuperiore);
