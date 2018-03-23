@@ -13,7 +13,7 @@ public class FinestraAggiungiModificaProdotto extends JFrame
 {
 	private MotoreCongelatore motoreCongelatore;
 	private Prodotto prodotto;
-	private final int LARGHEZZA_FINESTRA = 300;
+	private final int LARGHEZZA_FINESTRA = 360;
 	private final int ALTEZZA_FINESTRA = 400;
 	/**
 	 * Costruttore che viene utilizzato per aggiungere un prodotto

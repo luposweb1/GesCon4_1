@@ -255,10 +255,12 @@ public class PannelloAggiungiModificaProdotto extends JPanel
 			
 			//prima riga
 			Box boxNomeProdotto = Box.createHorizontalBox();
+			
 			etichettaDenominazioneProdotto = new JLabel("Denominazione");
 			etichettaDenominazioneProdotto.setForeground(Color.yellow);
 			casellaDenominazioneProdotto = new JTextField(15);
 			casellaDenominazioneProdotto.setMaximumSize(casellaDenominazioneProdotto.getPreferredSize());
+			boxNomeProdotto.add(Box.createHorizontalStrut(10));
 			boxNomeProdotto.add(etichettaDenominazioneProdotto);
 			boxNomeProdotto.add(Box.createHorizontalStrut(20));
 			boxNomeProdotto.add(casellaDenominazioneProdotto);
@@ -280,6 +282,7 @@ public class PannelloAggiungiModificaProdotto extends JPanel
 			sceltaAnnoInserimento.addItem(annoAttuale);
 			sceltaAnnoInserimento.addItem(annoAttuale-1);
 			
+			boxDataInserimento.add(Box.createHorizontalStrut(10));
 			boxDataInserimento.add(etichettaDataInserimento);
 			boxDataInserimento.add(Box.createHorizontalStrut(10));
 			boxDataInserimento.add(sceltaGiornoInserimento);
@@ -305,6 +308,8 @@ public class PannelloAggiungiModificaProdotto extends JPanel
 				sceltaAnnoScadenza.addItem(i);
 			}
 			sceltaAnnoScadenza.setSelectedItem(oggi.get(Calendar.YEAR));
+			
+			boxDataScadenza.add(Box.createHorizontalStrut(10));
 			boxDataScadenza.add(etichettaDataScadenza);
 			boxDataScadenza.add(Box.createHorizontalStrut(10));
 			boxDataScadenza.add(sceltaGiornoScadenza);
@@ -316,7 +321,7 @@ public class PannelloAggiungiModificaProdotto extends JPanel
 			
 			//quarta riga
 			Box boxQuantit‡ = Box.createHorizontalBox();
-			etichettaQuantit‡ = new JLabel("Quantit‡");
+			etichettaQuantit‡ = new JLabel(" Quantit‡");
 			etichettaQuantit‡.setForeground(Color.YELLOW);
 			sceltaUnit‡DiMusura = new JComboBox<String>();
 			for(int i=0; i<getMotoreCongelatore().getElencoUnit‡DiMisura().size(); i++)
@@ -326,21 +331,27 @@ public class PannelloAggiungiModificaProdotto extends JPanel
 			casellaQuantit‡ = new JTextField(6);
 			casellaQuantit‡.setMaximumSize(casellaQuantit‡.getPreferredSize());
 			casellaQuantit‡.setText("0");
+			
+			boxQuantit‡.add(Box.createHorizontalStrut(10));
 			boxQuantit‡.add(etichettaQuantit‡);
 			boxQuantit‡.add(Box.createHorizontalStrut(10));
 			boxQuantit‡.add(sceltaUnit‡DiMusura);
 			boxQuantit‡.add(Box.createHorizontalStrut(3));
 			boxQuantit‡.add(casellaQuantit‡);
+			boxQuantit‡.add(Box.createHorizontalStrut(10));
 			
 			//quinta riga
 			Box boxNote = Box.createHorizontalBox();
-			etichettaNote = new JLabel("Note");
+			etichettaNote = new JLabel(" Note");
 			etichettaNote.setForeground(Color.YELLOW);
 			areaNote = new JTextArea(5,5);
 			JScrollPane pannelloScorrevole = new JScrollPane(areaNote);
+			
+			boxNote.add(Box.createHorizontalStrut(10));
 			boxNote.add(etichettaNote);
 			boxNote.add(Box.createHorizontalStrut(10));
 			boxNote.add(pannelloScorrevole);
+			boxNote.add(Box.createHorizontalStrut(10));
 			
 			boxVerticale.add(Box.createVerticalStrut(5));
 			boxVerticale.add(boxNomeProdotto);
@@ -352,6 +363,7 @@ public class PannelloAggiungiModificaProdotto extends JPanel
 			boxVerticale.add(boxQuantit‡);
 			boxVerticale.add(Box.createVerticalStrut(20));
 			boxVerticale.add(boxNote);
+			
 			
 			this.add(boxVerticale);
 			
