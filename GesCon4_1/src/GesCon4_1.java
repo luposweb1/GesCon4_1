@@ -16,5 +16,6 @@ public class GesCon4_1
 		finestraPrincipale.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		finestraPrincipale.setVisible(true);
 		//modifica per ricordare l'account
+		System.out.println("test");
 	}
 }
